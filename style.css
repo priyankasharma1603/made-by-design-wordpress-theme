@@ -1,0 +1,355 @@
+/*
+Theme Name: Made By Design Theme
+Author: Priyanka Sharma
+Description: WordPress Developer Assignment Theme
+Version: 1.0
+*/
+
+/* RESET */
+
+*,
+*::before,
+*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Segoe UI", Arial, sans-serif;
+background:#f8f9fb;
+color:#333;
+line-height:1.6;
+}
+
+/* LAYOUT */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.site-header{
+background:#111;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+/* LOGO */
+
+.logo a{
+font-size:26px;
+font-weight:700;
+color:#fff;
+text-decoration:none;
+letter-spacing:1px;
+}
+
+.logo-highlight{
+color:#ff6600;
+}
+
+/* NAVIGATION MENU */
+
+.main-nav ul,
+.nav-menu{
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:30px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.main-nav ul li{
+display:inline-block;
+}
+
+.main-nav ul li a{
+color:white;
+font-size:16px;
+text-decoration:none;
+font-weight:500;
+padding:5px 0;
+position:relative;
+transition:0.3s;
+}
+
+/* hover underline animation */
+
+.main-nav ul li a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:2px;
+background:#ff6600;
+transition:0.3s;
+}
+
+.main-nav ul li a:hover::after{
+width:100%;
+}
+
+/* ================= SLIDER ================= */
+
+.hero-slider{
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+display:none;
+position:relative;
+animation:fadeSlide .8s ease-in-out;
+}
+
+@keyframes fadeSlide{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.slide img{
+width:100%;
+height:650px;
+object-fit:cover;
+filter:brightness(60%);
+}
+
+/* SLIDE CONTENT */
+
+.slide-content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+text-align:center;
+color:#fff;
+width:80%;
+max-width:700px;
+}
+
+.slide-content h2{
+font-size:44px;
+margin-bottom:15px;
+font-weight:700;
+}
+
+.slide-content p{
+font-size:18px;
+margin-bottom:25px;
+opacity:.9;
+}
+
+/* BUTTON */
+
+.slide-content a{
+display:inline-block;
+padding:12px 30px;
+background:#ff6600;
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.slide-content a:hover{
+background:#ff4500;
+transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(0,0,0,.3);
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:80px 0;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+background:#fff;
+border-radius:10px;
+overflow:hidden;
+text-align:center;
+box-shadow:0 4px 20px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 35px rgba(0,0,0,0.15);
+}
+
+/* PRODUCT IMAGE */
+
+.product-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:.4s;
+}
+
+.product-card:hover img{
+transform:scale(1.05);
+}
+
+/* PRODUCT CONTENT */
+
+.product-card h3{
+margin:18px 0 10px;
+font-size:20px;
+}
+
+.product-card p{
+padding:0 20px;
+font-size:14px;
+color:#666;
+}
+
+/* PRODUCT BUTTON */
+
+.product-card a{
+display:inline-block;
+margin:20px 0;
+padding:10px 22px;
+background:#111;
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
+}
+
+.product-card a:hover{
+background:#ff6600;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+background:#111;
+color:#fff;
+margin-top:80px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+padding:50px 0;
+}
+
+.footer-logo{
+font-size:20px;
+max-width:250px;
+}
+
+.footer-logo p{
+margin-top:10px;
+font-size:14px;
+color:#bbb;
+}
+
+/* FOOTER LINKS */
+
+.footer-links,
+.footer-social{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.footer-links a,
+.footer-social a{
+color:#bbb;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover{
+color:#ff6600;
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+text-align:center;
+padding:18px 0;
+border-top:1px solid rgba(255,255,255,0.1);
+font-size:14px;
+color:#aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1024px){
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:768px){
+
+.header-inner{
+flex-direction:column;
+gap:15px;
+}
+
+.nav-menu{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.slide img{
+height:500px;
+}
+
+.slide-content h2{
+font-size:32px;
+}
+
+}
+
+@media (max-width:480px){
+
+.products{
+grid-template-columns:1fr;
+}
+
+.slide img{
+height:420px;
+}
+
+.slide-content h2{
+font-size:26px;
+}
+
+.slide-content p{
+font-size:15px;
+}
+
+}
